@@ -1,5 +1,3 @@
-import java.util.Random;
-
 /**
  * CS2 Review Assignment!
  * Do NOT use ChatGPT or any other generative AI to assist you with this assignment
@@ -25,7 +23,7 @@ public class JavaBeansAndBytes {
         yearFounded = 1995;
 
         System.out.println("Welcome to " + name + "!");
-        if (isOpen) {
+        if (isOpen == true) {
             System.out.println("We are open!");
         } else {
             System.out.println("We are closed :(");
@@ -34,36 +32,46 @@ public class JavaBeansAndBytes {
 
         // TODO
         // Update the year founded and print the new yearFounded in a sentence
+        yearFounded = 2006;
+        System.out.println("We were actually founded in " + yearFounded + ".");
 
         // Calling methods
         randomDiscount();
         // TODO
         // Add parameter to specialOfTheDay (drink of your choice)
-        specialOfTheDay();
+        specialOfTheDay("Iced Caramel Latte");
         countCups();
         baristasChoice();
 
         // TODO
         // Create two CoffeeDrink objects
+        CoffeeDrink drink1 = new CoffeeDrink(7,
+        "vanilla", true);
+        CoffeeDrink drink2 = new CoffeeDrink( 8, "caramel iced", false);
+
 
         // TODO
         // Print out the order details
+        drink1.printInfo();
+        drink2.printInfo();
 
-
-    }
+    }// end of constructor
 
     // Method to generate a random discount
     public void randomDiscount() {
         // TODO
         // Make this method generate a random integer discount (0-30%)
         // and print the result.
+        int discount = (int)(Math.random()* 31);
+        System.out.println("Your random discount is " + discount + "%!");
     }
 
     // Method with a parameter for the special of the day
-    public void specialOfTheDay() {
+    public void specialOfTheDay(String Special) {
         // TODO
         // Make this method accept a parameter representing the day’s special.
         // Print the day's special.
+        System.out.println("Todays Special is the " + Special );
     }
 
     // Method to show loops
@@ -74,20 +82,47 @@ public class JavaBeansAndBytes {
         // Write three different for loops that print the indicated numbers:
 
         // Print 1 to 5
+        for (int x = 0 ; x < 6 ; x++) {
+            System.out.println(x);
 
+        }
 
         // Print 2, 5, 8, 11
+        for (int x = 2 ; x < 12 ; x = x + 3) {
+            if (x < 11){
+                System.out.print(x + ", ");
+            } else {
+                System.out.println(x);// stoping the commas
+            }
 
+        }
+        System.out.println("\n"); //putting a space between lines
 
         // Print 8 to 0
-
+        for (int Potato = 8; Potato > 0 ; Potato = Potato - 1) {
+            System.out.print(Potato + ",");
+        }
     }
+
+
 
     // Method to recommend a coffee based on a random number
     public void baristasChoice() {
         // TODO
         // Make this method generate a random decimal between 0 and 1
         // and print one of four drink recommendations based on its value.
+        System.out.println("\n");
+        double r = Math.random();
+        if (r < 0.25) {
+            System.out.println(" The barista recommends a latte");
+        } else if (r < .5) {
+            System.out.println("Cappuccino");
+        } else if (r < .75) {
+            System.out.println("Cold whole milk");
+        } else {
+            System.out.println("Cold Water");
+        }
     }
 }
+
 
