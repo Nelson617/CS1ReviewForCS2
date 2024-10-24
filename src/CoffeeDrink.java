@@ -1,10 +1,11 @@
 // CoffeeDrink object class
 
+// New class Pastry, variables type, flavor, number with "getter" and setter" methods
 class CoffeeDrink { //HOMEWORK
 
-    int numberOfCups;
-    String flavor;
-    boolean hasWhippedCream;
+    public int numberOfCups;
+    private String flavor;
+    public boolean hasWhippedCream;
 
     // Constructor for CoffeeDrink class
     public CoffeeDrink(int paramNumberOfCups, String paramFlavor, boolean hasWhippedCream) {
@@ -19,6 +20,19 @@ class CoffeeDrink { //HOMEWORK
         this.hasWhippedCream = hasWhippedCream;
     }
 
+
+    public CoffeeDrink() {
+       numberOfCups = 1;
+       flavor = "coffee";
+       hasWhippedCream = false;
+    }//default order
+
+
+    public CoffeeDrink(int paramNumberOfCups){
+        numberOfCups = paramNumberOfCups;
+        flavor = "coffee";
+        hasWhippedCream = false;
+    }
     // Method to print information about the CoffeeDrink
     public void printInfo() {
         // TODO
@@ -32,5 +46,13 @@ class CoffeeDrink { //HOMEWORK
             System.out.println("without whipped cream");
 
         }
+    }
+
+    public String getFlavor() {
+        return flavor;
+
+    }
+    public void setFlavor(String flavor ) {
+        this.flavor = flavor;
     }
 }
